@@ -1,0 +1,39 @@
+
+
+read - lê todas as tuplas da tabela
+	http://localhost/php_rest_myblog_me/api/post/read.php
+	com postman: verbo GET, headers content-type: application/json
+	
+read_single - Lê apenas a tupla com id passado na URL
+	http://localhost/php_rest_myblog_me/api/post/read_single.php?id=2
+	com postman: verbo GET, headers content-type: application/json
+	
+create - insere uma linha na tabela posts (title, body, author, category_id)
+	http://localhost/php_rest_myblog_me/api/post/create.php
+	postman: verbo POST, headers content-type: application/json, body:
+		{
+			"title": "my test",
+			"body": "Adipiscing elit. Ut interdum est nec lorem mattis interdum. Cras augue est, interdum eu consectetur et, faucibus vel turpis. Etiam pulvinar, enim quis elementum iaculis, finished.",
+			"author": "Kevin Williams II",
+			"category_id": "4"
+		}
+		
+update - atualiza uma linha da tabela pelo id passado no corpo da requisicao (precisa especificar todos os campos, caso contrario ficará como null)
+	http://localhost/php_rest_myblog_me/api/post/update.php
+	com postman: verbo PUT, headers content-type: application/json, body:
+		{
+			"id": "11",
+			"title": "my test with update",
+			"body": "test body to check",
+			"author": "blablabla",
+			"category_id": "2",
+		}
+		
+delete - deleta uma linha da tabela posts pelo id passado no corpo da requisicao
+	http://localhost/php_rest_myblog_me/api/post/delete.php
+	com postman: verbo DELETE, headers content-type: application/json, body:
+		{
+			"id": "11"
+		}
+	
+	
